@@ -1,0 +1,43 @@
+{
+  "role": "DevOps Engineer",
+  "must_haves": [
+    "Docker",
+    "Kubernetes",
+    "CI/CD",
+    "Linux",
+    "AWS",
+    "Terraform",
+    "Bash/Shell Scripting",
+    "Git"
+  ],
+  "good_to_haves": [
+    "Ansible",
+    "Helm",
+    "Prometheus/Grafana",
+    "ELK Stack",
+    "Python",
+    "Networking",
+    "Security Best Practices",
+    "GitOps",
+    "Service Mesh (Istio)",
+    "PostgreSQL/MySQL"
+  ],
+  "aliases": {
+    "Docker": ["containerization", "containers", "docker compose", "dockerfile"],
+    "Kubernetes": ["k8s", "container orchestration", "kubectl", "eks", "gke", "aks"],
+    "CI/CD": ["continuous integration", "continuous deployment", "jenkins", "github actions", "gitlab ci", "argocd", "tekton"],
+    "Linux": ["unix", "ubuntu", "centos", "rhel", "debian"],
+    "AWS": ["amazon web services", "ec2", "s3", "rds", "lambda", "cloudformation", "eks", "cloud"],
+    "Terraform": ["infrastructure as code", "iac", "pulumi"],
+    "Bash/Shell Scripting": ["bash", "shell", "sh", "zsh", "scripting"],
+    "Git": ["github", "gitlab", "bitbucket", "version control"],
+    "Ansible": ["configuration management", "puppet", "chef"],
+    "Helm": ["helm charts", "package manager"],
+    "Prometheus/Grafana": ["prometheus", "grafana", "monitoring", "alertmanager"],
+    "ELK Stack": ["elasticsearch", "logstash", "kibana", "elk", "logging"],
+    "Python": ["python3", "py", "automation"],
+    "Networking": ["tcp/ip", "dns", "http", "ssl/tls", "load balancer", "nginx", "haproxy"],
+    "GitOps": ["argocd", "flux", "gitops"],
+    "Service Mesh (Istio)": ["istio", "linkerd", "envoy", "service mesh"]
+  }
+}

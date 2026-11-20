@@ -1,0 +1,14 @@
+{
+  "role": "ML Engineer",
+  "must_haves": ["Python", "Machine Learning", "Deep Learning", "MLOps", "SQL", "Git", "Model Deployment"],
+  "good_to_haves": ["TensorFlow", "PyTorch", "Docker", "Kubernetes", "Spark", "Feature Stores", "Monitoring", "A/B Testing"],
+  "aliases": {
+    "Machine Learning": ["ML", "scikit-learn", "sklearn", "predictive modeling"],
+    "Deep Learning": ["neural networks", "DL", "PyTorch", "TensorFlow", "Keras"],
+    "MLOps": ["ML pipelines", "model serving", "model monitoring", "MLflow", "Kubeflow"],
+    "Model Deployment": ["model serving", "inference", "FastAPI", "TorchServe"],
+    "Docker": ["containerization", "containers"],
+    "Kubernetes": ["K8s", "orchestration"],
+    "Spark": ["PySpark", "distributed computing", "big data"]
+  }
+}

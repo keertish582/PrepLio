@@ -1,0 +1,41 @@
+{
+  "role": "Frontend Developer",
+  "must_haves": [
+    "JavaScript",
+    "HTML",
+    "CSS",
+    "React",
+    "Responsive Design",
+    "Git",
+    "REST APIs",
+    "TypeScript"
+  ],
+  "good_to_haves": [
+    "Next.js",
+    "Vue.js",
+    "Redux",
+    "Webpack",
+    "Testing (Jest)",
+    "Performance Optimization",
+    "Accessibility (a11y)",
+    "GraphQL",
+    "Figma/Design Tools",
+    "CI/CD"
+  ],
+  "aliases": {
+    "JavaScript": ["js", "es6", "es2015", "ecmascript", "vanilla js"],
+    "HTML": ["html5", "semantic html"],
+    "CSS": ["css3", "sass", "scss", "less", "tailwind", "bootstrap", "styled-components"],
+    "React": ["reactjs", "react.js", "hooks", "jsx"],
+    "TypeScript": ["ts"],
+    "Git": ["github", "gitlab", "version control"],
+    "REST APIs": ["rest", "restful", "fetch", "axios", "http"],
+    "Next.js": ["nextjs"],
+    "Vue.js": ["vuejs", "vue"],
+    "Redux": ["redux toolkit", "state management", "zustand", "recoil"],
+    "Webpack": ["vite", "bundler", "parcel", "rollup"],
+    "Testing (Jest)": ["jest", "vitest", "testing library", "cypress", "unit testing"],
+    "GraphQL": ["apollo", "relay"],
+    "Figma/Design Tools": ["figma", "sketch", "adobe xd", "zeplin"]
+  }
+}

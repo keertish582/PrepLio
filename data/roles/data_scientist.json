@@ -1,0 +1,42 @@
+{
+  "role": "Data Scientist",
+  "must_haves": [
+    "Python",
+    "Machine Learning",
+    "Statistics",
+    "Pandas",
+    "NumPy",
+    "SQL",
+    "Data Visualization",
+    "Scikit-learn"
+  ],
+  "good_to_haves": [
+    "TensorFlow",
+    "PyTorch",
+    "Deep Learning",
+    "NLP",
+    "Spark",
+    "Tableau",
+    "Feature Engineering",
+    "A/B Testing",
+    "MLflow",
+    "Cloud Platforms"
+  ],
+  "aliases": {
+    "Python": ["python3", "py"],
+    "Machine Learning": ["ml", "supervised learning", "unsupervised learning", "classification", "regression"],
+    "Statistics": ["statistical analysis", "probability", "hypothesis testing", "bayesian"],
+    "Pandas": ["pandas", "dataframe", "data wrangling"],
+    "NumPy": ["numpy", "numerical computing"],
+    "SQL": ["mysql", "postgresql", "postgres", "sqlite", "relational database", "bigquery"],
+    "Data Visualization": ["matplotlib", "seaborn", "plotly", "visualization", "ggplot"],
+    "Scikit-learn": ["sklearn", "scikit learn"],
+    "TensorFlow": ["tf", "keras"],
+    "PyTorch": ["torch"],
+    "NLP": ["natural language processing", "bert", "transformers", "text classification"],
+    "Spark": ["apache spark", "pyspark", "big data"],
+    "Tableau": ["tableau", "power bi", "looker"],
+    "MLflow": ["mlops", "model registry", "experiment tracking"],
+    "Cloud Platforms": ["aws sagemaker", "gcp vertex ai", "azure ml", "cloud ml"]
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "role": "Software Engineer",
+  "must_haves": ["Python", "Data Structures", "Algorithms", "Git", "SQL", "REST APIs", "Object-Oriented Programming"],
+  "good_to_haves": ["Docker", "Kubernetes", "AWS", "CI/CD", "React", "TypeScript", "System Design", "Microservices"],
+  "aliases": {
+    "Python": ["py", "python3"],
+    "Git": ["GitHub", "GitLab", "version control"],
+    "SQL": ["MySQL", "PostgreSQL", "SQLite", "relational database"],
+    "REST APIs": ["REST", "RESTful", "API development", "HTTP APIs"],
+    "Docker": ["containerization", "containers"],
+    "AWS": ["Amazon Web Services", "cloud", "EC2", "S3"],
+    "CI/CD": ["continuous integration", "continuous deployment", "Jenkins", "GitHub Actions"]
+  }
+}

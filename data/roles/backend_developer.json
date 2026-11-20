@@ -1,0 +1,15 @@
+{
+  "role": "Backend Developer",
+  "must_haves": ["Python", "REST APIs", "SQL", "Git", "Authentication", "Server-side Development", "Data Modeling"],
+  "good_to_haves": ["Node.js", "Docker", "Redis", "Message Queues", "GraphQL", "Microservices", "AWS", "Testing"],
+  "aliases": {
+    "Python": ["Django", "Flask", "FastAPI", "py"],
+    "Node.js": ["NodeJS", "Express", "Express.js"],
+    "SQL": ["PostgreSQL", "MySQL", "SQLite", "relational databases"],
+    "Docker": ["containerization", "containers"],
+    "Redis": ["caching", "in-memory store"],
+    "Message Queues": ["RabbitMQ", "Kafka", "Celery", "async processing"],
+    "AWS": ["Amazon Web Services", "cloud", "Lambda", "EC2"],
+    "Authentication": ["OAuth", "JWT", "auth", "authorization"]
+  }
+}

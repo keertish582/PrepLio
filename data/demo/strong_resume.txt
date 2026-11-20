@@ -1,0 +1,72 @@
+ARJUN MEHTA
+Email: arjun.mehta@email.com | Phone: +91-9876543210
+LinkedIn: linkedin.com/in/arjunmehta | GitHub: github.com/arjunmehta
+Location: Bengaluru, Karnataka, India
+
+EDUCATION
+---------
+Bachelor of Engineering — Computer Science and Engineering
+RV College of Engineering, Bengaluru | CGPA: 8.9/10 | 2020 – 2024
+
+Relevant Coursework: Data Structures & Algorithms, Operating Systems, Database Management Systems,
+Computer Networks, Software Engineering, Machine Learning, Object-Oriented Programming
+
+TECHNICAL SKILLS
+----------------
+Languages:       Python, Java, JavaScript, C++, SQL, Bash
+Frameworks:      React.js, Node.js, Flask, Spring Boot, FastAPI
+Databases:       MySQL, PostgreSQL, MongoDB, Redis
+Tools & DevOps:  Git, GitHub Actions, Docker, Linux, VS Code, Postman
+Cloud:           AWS (EC2, S3, RDS), Google Cloud Platform (basic)
+Concepts:        REST APIs, Microservices, OOP, Design Patterns, Agile/Scrum
+
+WORK EXPERIENCE
+---------------
+Software Engineering Intern | Infosys Limited, Bengaluru | June 2023 – August 2023
+- Developed a customer-facing REST API service using Spring Boot that reduced average response
+  time by 30% by implementing Redis caching for frequently queried product data.
+- Collaborated with a team of 6 engineers in an Agile sprint cycle, participating in daily
+  standups, code reviews, and retrospectives.
+- Wrote unit and integration tests achieving 85% code coverage using JUnit and Mockito.
+- Automated deployment pipeline using GitHub Actions, cutting release time from 2 hours to 20 minutes.
+
+Software Developer Intern | StartupXYZ (Early-stage), Remote | December 2022 – February 2023
+- Built a full-stack task management web application using React.js (frontend) and Flask (backend)
+  with PostgreSQL as the data store.
+- Implemented JWT-based authentication and role-based access control for 3 user roles.
+- Containerized the application using Docker and deployed it on AWS EC2 instance.
+
+PROJECTS
+--------
+PrepLio — Placement Preparation Assistant (Personal Project | 2024)
+- Engineered a Streamlit-based AI platform for resume review, skill gap analysis, and mock interviews.
+- Integrated Ollama (Llama 3) for local LLM-powered feedback, achieving sub-3s response time.
+- Designed SQLite persistence layer with parameterized queries and built PDF/JSON report export
+  using ReportLab, serving 50+ beta users during testing.
+- Tech: Python, Streamlit, SQLite, Pydantic v2, ReportLab, Ollama, Plotly
+
+BookTracker — Personal Reading Management App (2023)
+- Designed and implemented a RESTful API backend in FastAPI with async endpoints and PostgreSQL.
+- Added full-text search using PostgreSQL tsvector and integrated Google Books API for book metadata.
+- Deployed on GCP Cloud Run with CI/CD via GitHub Actions; application handles 100 req/min.
+- Tech: Python, FastAPI, PostgreSQL, Docker, GCP, GitHub Actions
+
+AlgoViz — Algorithm Visualizer (2022)
+- Interactive web tool for visualizing sorting and graph traversal algorithms in real time.
+- Implemented 8 algorithms (Bubble Sort, Merge Sort, Quick Sort, BFS, DFS, Dijkstra, etc.)
+  with step-by-step animation using vanilla JavaScript and HTML5 Canvas.
+- Tech: HTML5, CSS3, JavaScript (ES6)
+
+ACHIEVEMENTS & CERTIFICATIONS
+-------------------------------
+- AWS Certified Cloud Practitioner (CLF-C02) — Amazon Web Services, 2023
+- Solved 400+ problems on LeetCode (Rating: 1750); Top 15% globally
+- Winner — Internal Hackathon, Infosys (2023): Built a supply-chain anomaly detector in 24 hrs
+- Google Data Analytics Professional Certificate (Coursera), 2022
+- Dean's List — Academic Excellence Award, RVCE (2021, 2022, 2023)
+
+EXTRACURRICULAR
+---------------
+- Technical Head, ACM Student Chapter, RVCE — Organized 5 workshops on competitive programming
+  and system design attended by 200+ students.
+- Open Source Contributor: Merged 3 PRs to popular Python OSS projects (requests, httpx).

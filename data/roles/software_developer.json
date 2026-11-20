@@ -1,0 +1,37 @@
+{
+  "role": "Software Developer",
+  "must_haves": [
+    "Python",
+    "Java",
+    "Data Structures & Algorithms",
+    "Object-Oriented Programming",
+    "SQL",
+    "Git",
+    "REST APIs",
+    "Problem Solving"
+  ],
+  "good_to_haves": [
+    "Docker",
+    "Kubernetes",
+    "CI/CD",
+    "AWS",
+    "Microservices",
+    "Redis",
+    "Linux",
+    "System Design",
+    "Unit Testing",
+    "Agile/Scrum"
+  ],
+  "aliases": {
+    "Python": ["python3", "py"],
+    "Java": ["java8", "java11", "java17", "spring", "spring boot"],
+    "SQL": ["mysql", "postgresql", "postgres", "sqlite", "relational database"],
+    "Git": ["github", "gitlab", "version control", "bitbucket"],
+    "REST APIs": ["rest", "restful", "api", "http", "flask", "fastapi", "django"],
+    "Docker": ["containerization", "containers"],
+    "Kubernetes": ["k8s", "container orchestration"],
+    "AWS": ["amazon web services", "ec2", "s3", "lambda", "cloud"],
+    "CI/CD": ["continuous integration", "continuous deployment", "jenkins", "github actions", "gitlab ci"],
+    "Linux": ["unix", "bash", "shell scripting"]
+  }
+}

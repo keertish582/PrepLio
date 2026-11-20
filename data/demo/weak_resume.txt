@@ -1,0 +1,34 @@
+Rahul Kumar
+rahul@gmail.com
+9988776655
+
+OBJECTIVE
+I am looking for a software job. I am a hard working person and quick learner.
+I want to work in a good company.
+
+EDUCATION
+B.Tech Computer Science
+Some Engineering College
+2019–2023, 65%
+
+SKILLS
+C, C++, Java, Python, HTML
+
+PROJECTS
+Library Management System
+- Made a system to manage books.
+- Used C++ and file handling.
+
+Personal Portfolio Website
+- Made a website using HTML and CSS.
+
+WORK EXPERIENCE
+Nil
+
+HOBBIES
+Watching movies, playing cricket, listening to music.
+
+DECLARATION
+I hereby declare that the above information is true to the best of my knowledge.
+
+Rahul Kumar
