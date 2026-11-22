@@ -29,9 +29,16 @@ S.init_state()
 def main():
     _render_sidebar()
 
-    # Main header
+    # Main header & 3D Interactive Hero
     st.title("🎓 Placement Preparation Assistant")
-    st.caption("Review your resume, identify skill gaps, and practice with purpose.")
+    
+    curr_role = S.get(S.SELECTED_ROLE) or "Software Developer"
+    curr_mode = S.get(S.APP_MODE) or "demo"
+    ollama_stat = S.get(S.OLLAMA_STATUS) or {}
+    ollama_ready = bool(ollama_stat.get("model_ready", False))
+
+    from ui.components import render_hero_banner
+    render_hero_banner(curr_role, curr_mode, ollama_ready)
 
     # Top navigation tabs
     tabs = st.tabs([
