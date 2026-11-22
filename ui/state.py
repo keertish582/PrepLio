@@ -28,6 +28,12 @@ EXPORT_PDF_BYTES = "export_pdf_bytes"
 EXPORT_JSON_BYTES = "export_json_bytes"
 OLLAMA_STATUS = "ollama_status"
 OLLAMA_CHECKED_AT = "ollama_checked_at"
+USER_ID = "user_id"
+USER_NAME = "user_name"
+USER_IDENTIFIER = "user_identifier"
+USER_EDUCATION = "user_education"
+USER_STATUS = "user_status"
+IS_LOGGED_IN = "is_logged_in"
 
 DEFAULTS: dict[str, Any] = {
     APP_MODE: "demo",
@@ -54,6 +60,12 @@ DEFAULTS: dict[str, Any] = {
     EXPORT_JSON_BYTES: None,
     OLLAMA_STATUS: None,
     OLLAMA_CHECKED_AT: None,
+    USER_ID: 1,
+    USER_NAME: "Candidate",
+    USER_IDENTIFIER: "",
+    USER_EDUCATION: "B.Tech Computer Science",
+    USER_STATUS: "Actively Preparing",
+    IS_LOGGED_IN: False,
 }
 
 def init_state():
@@ -95,8 +107,17 @@ def on_role_change(new_role: str):
         st.session_state[SELECTED_ROLE] = new_role
 
 def clear_session():
-    """Remove all private/analysis state. Keep mode and role."""
-    keep = {APP_MODE: get(APP_MODE), SELECTED_ROLE: get(SELECTED_ROLE)}
+    """Remove all private/analysis state. Keep mode, role, and user profile."""
+    keep = {
+        APP_MODE: get(APP_MODE),
+        SELECTED_ROLE: get(SELECTED_ROLE),
+        USER_ID: get(USER_ID),
+        USER_NAME: get(USER_NAME),
+        USER_IDENTIFIER: get(USER_IDENTIFIER),
+        USER_EDUCATION: get(USER_EDUCATION),
+        USER_STATUS: get(USER_STATUS),
+        IS_LOGGED_IN: get(IS_LOGGED_IN),
+    }
     for k in DEFAULTS:
         st.session_state[k] = DEFAULTS[k]
     for k, v in keep.items():

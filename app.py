@@ -37,8 +37,9 @@ def main():
     ollama_stat = S.get(S.OLLAMA_STATUS) or {}
     ollama_ready = bool(ollama_stat.get("model_ready", False))
 
-    from ui.components import render_hero_banner
+    from ui.components import render_hero_banner, render_profile_widget
     render_hero_banner(curr_role, curr_mode, ollama_ready)
+    render_profile_widget()
 
     # Top navigation tabs
     tabs = st.tabs([
@@ -74,6 +75,11 @@ def _render_sidebar():
     with st.sidebar:
         st.markdown("### 🎓 PrepLio")
         st.caption("Local Career Readiness Assistant")
+
+        user_name = S.get(S.USER_NAME) or "Candidate"
+        is_logged_in = S.get(S.IS_LOGGED_IN)
+        user_tag = S.get(S.USER_IDENTIFIER) or "Guest"
+        st.markdown(f"👤 **{user_name}** `({user_tag})`")
         st.divider()
 
         # Target Role Selector

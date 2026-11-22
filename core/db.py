@@ -71,6 +71,16 @@ def init_db() -> None:
                 answers      TEXT    NOT NULL DEFAULT '[]',
                 started_at   TEXT    NOT NULL DEFAULT (datetime('now'))
             );
+
+            CREATE TABLE IF NOT EXISTS users (
+                id           INTEGER PRIMARY KEY AUTOINCREMENT,
+                identifier   TEXT UNIQUE NOT NULL,
+                name         TEXT NOT NULL DEFAULT '',
+                role         TEXT NOT NULL DEFAULT 'Software Developer',
+                education    TEXT NOT NULL DEFAULT '',
+                status       TEXT NOT NULL DEFAULT 'Actively Preparing',
+                created_at   TEXT NOT NULL DEFAULT (datetime('now'))
+            );
             """
         )
         conn.commit()
@@ -369,6 +379,82 @@ def get_latest_review(user_id: int = 1) -> dict[str, Any] | None:
         except Exception:
             pass
         return d
+    finally:
+        conn.close()
+
+
+def get_or_create_user(
+    identifier: str,
+    name: str = "",
+    role: str = "Software Developer",
+    education: str = "",
+    status: str = "Actively Preparing",
+) -> dict[str, Any]:
+    """Retrieve existing user by email/mobile or create a new profile."""
+    identifier = identifier.strip()
+    if not identifier:
+        return {"id": 1, "identifier": "guest", "name": "Guest Candidate", "role": role, "education": "", "status": "Guest"}
+    conn = _get_conn()
+    try:
+        cur = conn.cursor()
+        cur.execute("SELECT * FROM users WHERE identifier = ?", (identifier,))
+        row = cur.fetchone()
+        if row:
+            return dict(row)
+        display_name = name.strip() or identifier.split("@")[0]
+        cur.execute(
+            """
+            INSERT INTO users (identifier, name, role, education, status)
+            VALUES (?, ?, ?, ?, ?)
+            """,
+            (identifier, display_name, role, education, status),
+        )
+        conn.commit()
+        user_id = cur.lastrowid
+        return {
+            "id": user_id,
+            "identifier": identifier,
+            "name": display_name,
+            "role": role,
+            "education": education,
+            "status": status,
+        }
+    finally:
+        conn.close()
+
+
+def update_user_profile(
+    user_id: int,
+    name: str,
+    role: str,
+    education: str = "",
+    status: str = "Actively Preparing",
+) -> None:
+    """Update profile details for an existing user."""
+    conn = _get_conn()
+    try:
+        cur = conn.cursor()
+        cur.execute(
+            """
+            UPDATE users
+            SET name = ?, role = ?, education = ?, status = ?
+            WHERE id = ?
+            """,
+            (name.strip(), role.strip(), education.strip(), status.strip(), user_id),
+        )
+        conn.commit()
+    finally:
+        conn.close()
+
+
+def get_user_by_id(user_id: int) -> dict[str, Any] | None:
+    """Fetch user profile by user id."""
+    conn = _get_conn()
+    try:
+        cur = conn.cursor()
+        cur.execute("SELECT * FROM users WHERE id = ?", (user_id,))
+        row = cur.fetchone()
+        return dict(row) if row else None
     finally:
         conn.close()
 

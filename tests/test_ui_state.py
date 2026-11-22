@@ -82,3 +82,25 @@ def test_clear_session():
     assert S.get(S.INTERVIEW_ANSWERS) == []
     # Role and mode should be preserved
     assert S.get(S.SELECTED_ROLE) == "DevOps Engineer"
+
+
+def test_user_profile_state_and_db():
+    from core.db import init_db, get_or_create_user, update_user_profile, get_user_by_id
+    init_db()
+    user = get_or_create_user(
+        identifier="+919876543210",
+        name="Rahul Sharma",
+        role="Software Developer",
+        education="B.Tech CS",
+        status="Actively Preparing",
+    )
+    assert user["id"] is not None
+    assert user["identifier"] == "+919876543210"
+    assert user["name"] == "Rahul Sharma"
+
+    update_user_profile(user["id"], "Rahul S.", "Data Scientist", "M.Tech CS", "Interview Prep")
+    updated = get_user_by_id(user["id"])
+    assert updated is not None
+    assert updated["name"] == "Rahul S."
+    assert updated["role"] == "Data Scientist"
+    assert updated["education"] == "M.Tech CS"
