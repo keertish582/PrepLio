@@ -58,8 +58,8 @@ def render_hero_banner(target_role: str, mode: str = "demo", ollama_ready: bool 
         f'<span style="font-size:0.85rem; font-weight:700; text-transform:uppercase; letter-spacing:0.08em; color:#4F46E5;">'
         f'Placement Preparation Assistant'
         f'</span>'
-        f'<span class="chip-3d" style="background:#EEF2FF; border-color:#C7D2FE; color:#4338CA; font-size:0.75rem;">'
-        f'Workspace'
+        f'<span class="chip-3d" style="background:linear-gradient(135deg, #EEF2FF, #E0E7FF); border-color:#C7D2FE; color:#4338CA; font-size:0.75rem;">'
+        f'🤖 AI Workspace'
         f'</span>'
         f'</div>'
         f'<div class="hero-title-gradient">PrepLio Career Intelligence</div>'
@@ -81,6 +81,11 @@ def render_login_console():
     # 3D Welcome Portal Hero
     portal_html = (
         f'<div class="hero-3d-wrapper" style="text-align:center; padding:2rem 1.5rem; margin-bottom:1.5rem;">'
+        f'<div style="display:flex; justify-content:center; gap:0.5rem; margin-bottom:0.5rem;">'
+        f'<span class="chip-3d" style="background:linear-gradient(135deg, #EEF2FF, #E0E7FF); border-color:#C7D2FE; color:#4338CA; font-size:0.75rem;">'
+        f'🤖 Neural Career Intelligence • Qwen3:4b Local AI'
+        f'</span>'
+        f'</div>'
         f'<div style="font-size:2.5rem; margin-bottom:0.25rem; filter:drop-shadow(0 6px 12px rgba(79,70,229,0.35));">🎓</div>'
         f'<div style="font-size:0.85rem; font-weight:800; text-transform:uppercase; letter-spacing:0.12em; color:#4F46E5; margin-bottom:0.35rem;">Candidate Access Portal</div>'
         f'<div class="hero-title-gradient" style="font-size:2.2rem; margin-bottom:0.4rem;">PrepLio Placement Assistant</div>'

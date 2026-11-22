@@ -26,23 +26,84 @@ COLORS = {
 CSS = """
 <style>
 /* ── Global Page & Typography ────────────────────────────────────────────── */
-@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap');
 
 html, body, [class*="css"] {
     font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
 }
 
+/* ── AI Neural Matrix Background ─────────────────────────────────────────── */
 .stApp {
-    background: radial-gradient(circle at 10% 20%, rgba(238, 242, 255, 0.8) 0%, rgba(246, 248, 252, 1) 70%),
-                radial-gradient(circle at 90% 80%, rgba(243, 232, 255, 0.6) 0%, rgba(246, 248, 252, 1) 70%);
+    background-color: #F8FAFD;
+    background-image:
+        /* Quantum Neural Glow Orbs */
+        radial-gradient(circle at 12% 16%, rgba(99, 102, 241, 0.16) 0%, transparent 42%),
+        radial-gradient(circle at 88% 18%, rgba(139, 92, 246, 0.14) 0%, transparent 40%),
+        radial-gradient(circle at 50% 55%, rgba(6, 182, 212, 0.09) 0%, transparent 50%),
+        radial-gradient(circle at 82% 84%, rgba(16, 185, 129, 0.10) 0%, transparent 44%),
+        radial-gradient(circle at 18% 88%, rgba(79, 70, 229, 0.12) 0%, transparent 46%),
+        /* Cyber Synapse Dot Matrix */
+        radial-gradient(rgba(99, 102, 241, 0.22) 1.25px, transparent 1.25px),
+        /* Neural Circuit Mesh Lines */
+        linear-gradient(to right, rgba(99, 102, 241, 0.04) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(99, 102, 241, 0.04) 1px, transparent 1px);
+    background-size: 100% 100%, 100% 100%, 100% 100%, 100% 100%, 100% 100%, 28px 28px, 56px 56px, 56px 56px;
     background-attachment: fixed;
+    animation: neuralMatrixShift 24s ease-in-out infinite alternate;
+}
+
+/* Top Holographic AI Beam */
+.stApp::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, #4F46E5 0%, #8B5CF6 25%, #06B6D4 50%, #10B981 75%, #4F46E5 100%);
+    background-size: 200% 100%;
+    animation: aiLaserScan 5s linear infinite;
+    z-index: 999999;
+    pointer-events: none;
+    box-shadow: 0 0 12px rgba(99, 102, 241, 0.5), 0 0 24px rgba(6, 182, 212, 0.3);
 }
 
 #MainMenu {visibility: hidden;}
 footer {visibility: hidden;}
 header {visibility: hidden;}
 
-/* ── 3D Keyframe Animations ──────────────────────────────────────────────── */
+/* ── 3D & AI Keyframe Animations ─────────────────────────────────────────── */
+@keyframes neuralMatrixShift {
+    0% {
+        background-position: 0% 0%, 0% 0%, 0% 0%, 0% 0%, 0% 0%, 0px 0px, 0px 0px, 0px 0px;
+    }
+    50% {
+        background-position: 2% 3%, -2% -2%, 1% 2%, -1% 1%, 2% -1%, 14px 14px, 28px 28px, 28px 28px;
+    }
+    100% {
+        background-position: -2% -1%, 2% 3%, -1% -2%, 2% -1%, -1% 2%, 0px 0px, 0px 0px, 0px 0px;
+    }
+}
+
+@keyframes aiLaserScan {
+    0% { background-position: 0% 0%; }
+    100% { background-position: 200% 0%; }
+}
+
+@keyframes aiPulseDot {
+    0% {
+        box-shadow: 0 0 0 0 rgba(79, 70, 229, 0.7);
+        transform: scale(0.95);
+    }
+    70% {
+        box-shadow: 0 0 0 8px rgba(79, 70, 229, 0);
+        transform: scale(1.05);
+    }
+    100% {
+        box-shadow: 0 0 0 0 rgba(79, 70, 229, 0);
+        transform: scale(0.95);
+    }
+}
 @keyframes float3D {
     0%, 100% {
         transform: translateY(0px) perspective(1000px) rotateX(0deg) rotateY(0deg);
@@ -331,6 +392,14 @@ button[kind="secondary"]:hover {
     height: 2px;
     background: linear-gradient(90deg, #4F46E5 0%, rgba(79, 70, 229, 0.1) 80%, transparent 100%);
     border-radius: 2px;
+}
+
+/* ── AI Neural Sidebar ───────────────────────────────────────────────────── */
+[data-testid="stSidebar"] {
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.95) 0%, rgba(246, 248, 255, 0.97) 100%) !important;
+    border-right: 1px solid rgba(199, 210, 254, 0.7) !important;
+    backdrop-filter: blur(20px) !important;
+    box-shadow: 4px 0 24px rgba(79, 70, 229, 0.05);
 }
 
 .pp-footer {
