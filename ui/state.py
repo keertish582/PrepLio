@@ -74,8 +74,9 @@ def init_state():
         if k not in st.session_state:
             st.session_state[k] = v
 
-def get(key: str) -> Any:
-    return st.session_state.get(key, DEFAULTS.get(key))
+def get(key: str, default: Any = None) -> Any:
+    val = st.session_state.get(key, DEFAULTS.get(key))
+    return val if val is not None else default
 
 def set_val(key: str, value: Any):
     st.session_state[key] = value

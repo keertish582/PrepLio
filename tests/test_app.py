@@ -19,11 +19,33 @@ def test_app_initial_render():
 
 
 def test_app_tabs_rendered():
-    """Verify that all 5 tabs are rendered properly."""
+    """Verify that all 5 tabs are rendered properly after candidate sign-in."""
     at = AppTest.from_file(APP_PATH, default_timeout=30)
     at.run()
     assert not at.exception
-    # Verify tabs exist
+    # Log in via quick demo button if on the login console
+    demo_btn = [b for b in at.button if "Demo" in getattr(b, "label", "")]
+    if demo_btn:
+        demo_btn[0].click().run()
+        assert not at.exception
+    # Verify all 5 preparation console tabs exist
+    assert len(at.tabs) == 5
+
+
+def test_login_console_flow():
+    """Verify separate login console initial state and transition to workspace consoles."""
+    at = AppTest.from_file(APP_PATH, default_timeout=30)
+    at.run()
+    assert not at.exception
+    # Initially in unauthenticated state: login console displayed, no tabs
+    assert len(at.tabs) == 0
+    # Quick demo login button is available
+    demo_btn = [b for b in at.button if "Demo" in getattr(b, "label", "")]
+    assert len(demo_btn) >= 1
+    # Log in
+    demo_btn[0].click().run()
+    assert not at.exception
+    # Consoles are now active
     assert len(at.tabs) == 5
 
 

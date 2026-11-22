@@ -85,17 +85,19 @@ def test_clear_session():
 
 
 def test_user_profile_state_and_db():
+    import uuid
     from core.db import init_db, get_or_create_user, update_user_profile, get_user_by_id
     init_db()
+    test_id = f"test_{uuid.uuid4().hex[:8]}@prep.io"
     user = get_or_create_user(
-        identifier="+919876543210",
+        identifier=test_id,
         name="Rahul Sharma",
         role="Software Developer",
         education="B.Tech CS",
         status="Actively Preparing",
     )
     assert user["id"] is not None
-    assert user["identifier"] == "+919876543210"
+    assert user["identifier"] == test_id
     assert user["name"] == "Rahul Sharma"
 
     update_user_profile(user["id"], "Rahul S.", "Data Scientist", "M.Tech CS", "Interview Prep")

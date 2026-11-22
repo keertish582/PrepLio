@@ -29,19 +29,28 @@ S.init_state()
 def main():
     _render_sidebar()
 
-    # Main header & 3D Interactive Hero
+    # Main header
     st.title("🎓 Placement Preparation Assistant")
-    
+
+    is_logged_in = S.get(S.IS_LOGGED_IN, False)
+
+    # 1. Dedicated Login Console if not authenticated
+    if not is_logged_in:
+        from ui.components import render_login_console
+        render_login_console()
+        return
+
+    # 2. Authenticated Consoles Workspace
     curr_role = S.get(S.SELECTED_ROLE) or "Software Developer"
     curr_mode = S.get(S.APP_MODE) or "demo"
     ollama_stat = S.get(S.OLLAMA_STATUS) or {}
     ollama_ready = bool(ollama_stat.get("model_ready", False))
 
-    from ui.components import render_hero_banner, render_profile_widget
+    from ui.components import render_hero_banner, render_profile_badge
     render_hero_banner(curr_role, curr_mode, ollama_ready)
-    render_profile_widget()
+    render_profile_badge()
 
-    # Top navigation tabs
+    # Top navigation tabs for preparation consoles
     tabs = st.tabs([
         "📄 Resume Review",
         "🎯 Skill Gap",
@@ -50,25 +59,15 @@ def main():
         "📈 Progress & Analytics",
     ])
 
-    with tabs[0]:
-        from ui.resume_tab import render as render_resume
-        render_resume()
+    from ui.resume_tab import render as r_resume
+    from ui.gap_tab import render as r_gap
+    from ui.questions_tab import render as r_questions
+    from ui.interview_tab import render as r_interview
+    from ui.progress_tab import render as r_progress
 
-    with tabs[1]:
-        from ui.gap_tab import render as render_gap
-        render_gap()
-
-    with tabs[2]:
-        from ui.questions_tab import render as render_questions
-        render_questions()
-
-    with tabs[3]:
-        from ui.interview_tab import render as render_interview
-        render_interview()
-
-    with tabs[4]:
-        from ui.progress_tab import render as render_progress
-        render_progress()
+    for tab, render_fn in zip(tabs, (r_resume, r_gap, r_questions, r_interview, r_progress)):
+        with tab:
+            render_fn()
 
 
 def _render_sidebar():
@@ -76,10 +75,18 @@ def _render_sidebar():
         st.markdown("### 🎓 PrepLio")
         st.caption("Local Career Readiness Assistant")
 
-        user_name = S.get(S.USER_NAME) or "Candidate"
-        is_logged_in = S.get(S.IS_LOGGED_IN)
-        user_tag = S.get(S.USER_IDENTIFIER) or "Guest"
-        st.markdown(f"👤 **{user_name}** `({user_tag})`")
+        is_logged_in = S.get(S.IS_LOGGED_IN, False)
+        if is_logged_in:
+            user_name = S.get(S.USER_NAME) or "Candidate"
+            user_tag = S.get(S.USER_IDENTIFIER) or "Active"
+            st.markdown(f"👤 **{user_name}** `({user_tag})`")
+            if st.button("🚪 Logout / Switch", key="sidebar_logout_btn", use_container_width=True):
+                S.set_val(S.IS_LOGGED_IN, False)
+                S.set_val(S.USER_IDENTIFIER, "")
+                S.clear_session()
+                st.rerun()
+        else:
+            st.caption("🔒 *Candidate Portal — Sign In Below*")
         st.divider()
 
         # Target Role Selector
